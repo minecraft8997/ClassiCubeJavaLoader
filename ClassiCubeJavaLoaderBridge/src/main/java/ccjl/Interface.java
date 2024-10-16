@@ -2,6 +2,7 @@ package ccjl;
 
 import ru.deewend.ccjlbridge.ClassiCubeJavaLoaderBridge;
 import ru.deewend.ccjlbridge.EventManager;
+import ru.deewend.ccjlbridge.gameapi.Chat;
 import ru.deewend.ccjlbridge.gameapi.ScheduledTask;
 
 // not meant to be called by plugins
@@ -32,6 +33,7 @@ public class Interface {
         return null;
     }
 
+    // is not actually used by the native loader plugin
     public static double[] getPendingScheduledTaskIntervals() {
         try {
             return ScheduledTask.getPendingScheduledTaskIntervals();
@@ -43,7 +45,7 @@ public class Interface {
     }
 
     public static String[] getPendingChatMessages() {
-        return ClassiCubeJavaLoaderBridge.getInstance().getPendingChatMessages();
+        return Chat.getPendingChatMessages();
     }
 
     public static void fireEvent(int eventId) {

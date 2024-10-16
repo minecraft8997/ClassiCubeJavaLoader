@@ -1,15 +1,10 @@
 package ru.deewend.ccjlbridge;
 
-import ccjl.Interface;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import ru.deewend.ccjlbridge.gameapi.Chat;
 
 public class ClassiCubeJavaLoaderBridge {
     public static boolean DEBUG = false;
-    public static final int VERSION_CODE = 1;
+    public static final int VERSION_CODE = 2;
 
     public static final String LOG_FORMAT = "[HH:mm:ss dd.MM.yyyy] ";
     public static final String LOG_FILENAME_FORMAT = "dd-MM-yyyy-logs.txt";
@@ -17,14 +12,7 @@ public class ClassiCubeJavaLoaderBridge {
 
     private static ClassiCubeJavaLoaderBridge instance;
 
-    private final List<String> pendingChatMessages = new ArrayList<>();
-
     private ClassiCubeJavaLoaderBridge() {
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(Interface.getPendingScheduledTaskIDs()));
-        System.out.println(Arrays.toString(Interface.getPendingScheduledTaskIntervals()));
     }
 
     public static boolean start() {
@@ -48,32 +36,8 @@ public class ClassiCubeJavaLoaderBridge {
         }
         PluginManager.getInstance().loadPlugins();
         int loaded = PluginManager.getInstance().getPluginCount();
-        ClassiCubeJavaLoaderBridge.getInstance()
-                .addChatMessage("Initialized " + loaded + " Java plugin" + (loaded != 1 ? "s" : ""));
+        Chat.add("Initialized " + loaded + " Java plugin" + (loaded != 1 ? "s" : ""));
 
         return true;
-    }
-
-    public void addChatMessage(String message) {
-        Objects.requireNonNull(message);
-
-        synchronized (pendingChatMessages) {
-            pendingChatMessages.add(message);
-        }
-    }
-
-    public String[] getPendingChatMessages() {
-        return getPendingChatMessages(true);
-    }
-
-    public String[] getPendingChatMessages(boolean reset) {
-        String[] messages;
-        synchronized (pendingChatMessages) {
-            messages = pendingChatMessages.toArray(new String[0]);
-
-            if (reset) pendingChatMessages.clear();
-        }
-
-        return messages;
     }
 }
