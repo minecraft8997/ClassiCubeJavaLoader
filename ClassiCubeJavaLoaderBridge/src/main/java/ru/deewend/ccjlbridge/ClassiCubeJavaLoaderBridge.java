@@ -34,6 +34,7 @@ public class ClassiCubeJavaLoaderBridge {
 
             instance = this;
         }
+        System.out.println();
         PluginManager.getInstance().loadPlugins();
         int loaded = PluginManager.getInstance().getPluginCount();
         Chat.add("Initialized " + loaded + " Java plugin" + (loaded != 1 ? "s" : ""));

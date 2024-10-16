@@ -44,7 +44,7 @@ public class PluginManager {
                 System.exit(-1);
             }
         }
-        Log.s("Located plugins: " + urls.length);
+        Log.i("Located Java plugins: " + urls.length);
 
         try {
             URLClassLoader child = new URLClassLoader(urls, getClass().getClassLoader());
@@ -166,7 +166,7 @@ public class PluginManager {
                                     "two plugins having exactly the same identifiers");
                         }
 
-                        Log.i(Log.f("Enabling %s v%s (from %s) by %s%s",
+                        Log.i(Log.f("Initializing %s v%s (from %s) by %s%s",
                                 name, version, file.getName(), author, System.lineSeparator()));
 
                         Class<?> clazz = Class.forName(mainClass, true, child);
