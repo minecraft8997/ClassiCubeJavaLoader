@@ -1,11 +1,14 @@
+![CCJL screenshot](misc/jlscreenshot.png)
+
 # ClassiCubeJavaLoader
+
 An attempt to bring the support of my favorite language into my favorite cuboid game.
 ## Building
 Notes:
 - If built in x64 Release mode, for unknown reasons the plugin causes ClassiCube to stop responding during terrain generation, at least on my machine;
 - Compatibility with x86 platform has not been tested at all.
 
-1. Clone ClassiCube repository, import the project into Visual Studio and build the solution;
+1. Clone [ClassiCube repository](https://github.com/ClassiCube/ClassiCube), import the project into Visual Studio and build the solution;
 2. Right click on top "Solution 'ClassiCube' (1 of 1 project)" line, click Add -> New Project... -> select **Dynamic-Link Library (C++)**;
 3. Assuming you have created the new library project under 'ClassiCube' solution, delete all automatically generated source and header files. **Make sure you have selected Debug configuration and x64 platform**;
 4. Navigate to Configuration Properties -> C/C++ -> All Options -> Precompiled Header -> select **Not Using Precompiled Headers**;
