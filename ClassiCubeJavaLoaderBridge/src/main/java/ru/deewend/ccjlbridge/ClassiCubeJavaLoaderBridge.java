@@ -4,7 +4,7 @@ import ru.deewend.ccjlbridge.gameapi.Chat;
 
 public class ClassiCubeJavaLoaderBridge {
     public static boolean DEBUG = false;
-    public static final int VERSION_CODE = 2;
+    public static final int VERSION_CODE = 3;
 
     public static final String LOG_FORMAT = "[HH:mm:ss dd.MM.yyyy] ";
     public static final String LOG_FILENAME_FORMAT = "dd-MM-yyyy-logs.txt";
