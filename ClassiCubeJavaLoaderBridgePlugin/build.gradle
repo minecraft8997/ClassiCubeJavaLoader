@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.deewend'
+
+repositories {
+}
+
+dependencies {
+    implementation files('../ClassiCubeJavaLoaderBridge/build/libs/ClassiCubeJavaLoaderBridge.jar')
+}
+
+test {
+}
