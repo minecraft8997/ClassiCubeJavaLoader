@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.deewend'
+
+repositories {
+}
+
+dependencies {
+}
+
+test {
+}
