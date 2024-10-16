@@ -35,7 +35,9 @@ Notes:
 3. Almost full implementation SchedulerTask API with limitations of `interval` parameter (TODO document them and the reasons, it is a quite funny thing).
 
 ## Implementing a plugin
-TODO document, for now please check the example plugin located in `ClassiCubeJavaLoaderBridgePlugin` folder. Note the `plugin.properties` file under `resources` directory. Aside from the fields shown there, the loader also supports `dependsOn` parameter which you can use for enumerating plugin identifiers your work depends on (they will have a higher loading priority). Example: `dependsOn=Plugin1, Plugin2, ExamplePlugin`
+TODO document, for now please check the example plugin located in `ClassiCubeJavaLoaderBridgePlugin` folder. Note the `plugin.properties` file under `resources` directory. Aside from the fields shown there, the loader also supports `dependsOn` parameter which you can use for enumerating plugin identifiers your work depends on (they will have a higher loading priority).
+
+Example: `dependsOn=Plugin1, Plugin2, ExamplePlugin`
 
 ## Some other notes
 Use this project on your own risk, it may contain security issues. If you find one, please make sure to report it privately. One of the options could be my email: deewenddev(at)gmail(dot)com.
