@@ -4,7 +4,7 @@ import ru.deewend.ccjlbridge.gameapi.Chat;
 
 public class ClassiCubeJavaLoaderBridge {
     public static boolean DEBUG = false;
-    public static final int VERSION_CODE = 3;
+    public static final int VERSION_CODE = 4;
 
     public static final String LOG_FORMAT = "[HH:mm:ss dd.MM.yyyy] ";
     public static final String LOG_FILENAME_FORMAT = "dd-MM-yyyy-logs.txt";
@@ -37,7 +37,9 @@ public class ClassiCubeJavaLoaderBridge {
         System.out.println();
         PluginManager.getInstance().loadPlugins();
         int loaded = PluginManager.getInstance().getPluginCount();
-        Chat.add("Initialized " + loaded + " Java plugin" + (loaded != 1 ? "s" : ""));
+        Chat.add("Loaded " + loaded + " Java plugin" + (loaded != 1 ? "s" : ""));
+
+        PluginManager.getInstance().call("init");
 
         return true;
     }

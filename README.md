@@ -18,7 +18,7 @@ Notes:
 8. Select Build -> Build Solution, you should find the binary under `src/x64/Debug/` folder;
 9. Navigate to `ClassiCubeJavaLoaderBridge` directory, run `gradlew.bat build` command, the jarfile should be appear in `ClassiCubeJavaLoaderBridge/build/libs` folder (TODO document ability to write custom Java bridge by implementing `ccjl.Interface` class and changing `JLMOD` macro in `ClassiCubeJavaLoader.c`);
 10. Navigate to `ClassiCubeJavaLoaderBridgePlugin` directory, perform the same actions;
-11. Make sure your gamefolder is designed in the following way:<br><br>
+11. Make sure your game folder is designed in the following way:<br><br>
     ClassiCube/<br>
     ├─ javaplugins/<br>
     │  ├─ ClassiCubeJavaLoaderBridgePlugin.jar<br>

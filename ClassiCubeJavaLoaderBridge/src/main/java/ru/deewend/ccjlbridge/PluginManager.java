@@ -177,7 +177,7 @@ public class PluginManager {
                         }
                         Plugin plugin = (Plugin) pluginInstanceObj;
                         try {
-                            plugin.init();
+                            plugin.preInit();
                         } catch (Throwable t) {
                             Log.s("Failed to pre-initialize the plugin \"" + name + "\":", t);
                             Log.s("The game will be terminated");
